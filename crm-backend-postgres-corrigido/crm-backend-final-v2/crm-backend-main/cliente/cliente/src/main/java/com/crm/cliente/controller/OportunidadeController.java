@@ -58,7 +58,7 @@ public class OportunidadeController {
 
     @Operation(summary = "Lista oportunidades por cliente")
     @GetMapping("/cliente/{clienteId}")
-    public ResponseEntity<List<Oportunidade>> listarPorCliente(@PathVariable Long clienteId) {
+    public ResponseEntity<List<Oportunidade>> listarPorCliente(@PathVariable Integer clienteId) {
         return ResponseEntity.ok(oportunidadeService.listarPorClienteId(clienteId));
     }
 
