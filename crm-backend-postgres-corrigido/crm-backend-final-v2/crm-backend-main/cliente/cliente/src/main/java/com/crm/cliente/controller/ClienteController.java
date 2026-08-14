@@ -52,8 +52,8 @@ public class ClienteController {
     @Operation(summary = "Deleta um cliente pelo ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Integer id) {
-        clienteService.deletar(id);
-        return ResponseEntity.noContent().build();
+        boolean removido = clienteService.deletar(id);
+        return removido ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 
     @Operation(summary = "Deleta todos os clientes")
